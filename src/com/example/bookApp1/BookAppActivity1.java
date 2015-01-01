@@ -12,26 +12,26 @@ public class BookAppActivity1 extends Activity{
      * Called when the activity is first created.
      */
 
-//    Button btn;
+    Button btn;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-//        btn = (Button)findViewById(R.id.button);
+        btn = (Button)findViewById(R.id.button);
 //        btn.setOnClickListener(this);
-//        updateTime();
+        updateTime();
     }
-//
-//    public void onClick(View view)
-//    {
-//        updateTime();
-//    }
-//
-//    private void updateTime()
-//    {
-//        btn.setText(new Date().toString());
-//    }
+
+    public void update(View view)
+    {
+        updateTime();
+    }
+
+    private void updateTime()
+    {
+        btn.setText(new Date().toString());
+    }
 
 }
