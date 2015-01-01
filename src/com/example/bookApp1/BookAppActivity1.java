@@ -2,10 +2,6 @@ package com.example.bookApp1;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-
-import java.util.Date;
 
 public class BookAppActivity1 extends Activity{
     /**
