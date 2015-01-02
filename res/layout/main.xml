@@ -5,10 +5,11 @@
               android:layout_height="fill_parent"
               android:weightSum="1">
 
-    <ImageView
+    <ImageButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/imageView"
-            android:src="@drawable/robot"/>
+            android:id="@+id/imageButton"
+            android:src="@drawable/robot"
+            android:onClick="clicked"/>
 </LinearLayout>
 
