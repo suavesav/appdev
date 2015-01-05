@@ -5,11 +5,10 @@
               android:layout_height="fill_parent"
               android:weightSum="1">
 
-    <TextView
+    <CheckBox
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Were you expecting something profound?"
-            android:id="@+id/textView"
-            android:layout_gravity="center_horizontal"/>
+            android:layout_height="wrap_content"
+            android:text="The Box is unchecked"
+            android:id="@+id/checkBox" android:layout_weight="0.02"/>
 </LinearLayout>
 
