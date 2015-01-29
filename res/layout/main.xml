@@ -5,11 +5,25 @@
               android:layout_height="fill_parent"
               android:weightSum="1">
 
-    <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Were you expecting something profound?"
-            android:id="@+id/textView"
-            android:layout_gravity="center_horizontal"/>
+    <RadioGroup
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rock"
+            android:id="@+id/rock"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paper"
+            android:id="@+id/paper"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scissors"
+            android:id="@+id/scissors"/>
+    </RadioGroup>>
 </LinearLayout>
 
