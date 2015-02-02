@@ -44,5 +44,12 @@
                 android:text="right"
                 android:id="@+id/grp2r"/>
     </RadioGroup>
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Next"
+            android:onClick="goNext"
+            android:id="@+id/next" android:layout_gravity="center_horizontal"/>
 </LinearLayout>
 

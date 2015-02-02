@@ -1,12 +1,11 @@
 package com.example.bookApp1;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.widget.CompoundButton;
-import android.widget.LinearLayout;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.view.View;
+import android.widget.*;
 
 public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedChangeListener{
     RadioGroup orientation;
@@ -24,6 +23,13 @@ public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedCh
         orientation.setOnCheckedChangeListener(this);
         gravity = (RadioGroup)findViewById(R.id.gravity);
         gravity.setOnCheckedChangeListener(this);
+        Button buttonNext = (Button) findViewById(R.id.next);
+        buttonNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), BookAppActivity2.class));
+            }
+        });
     }
 
     public void onCheckedChanged(RadioGroup group, int checkedId)
@@ -46,5 +52,9 @@ public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedCh
                 gravity.setGravity(Gravity.RIGHT);
                 break;
         }
+    }
+    public void goNext(View next)
+    {
+
     }
 }
