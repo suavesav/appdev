@@ -53,8 +53,4 @@ public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedCh
                 break;
         }
     }
-    public void goNext(View next)
-    {
-
-    }
 }
