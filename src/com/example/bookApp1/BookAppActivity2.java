@@ -22,6 +22,7 @@ public class BookAppActivity2 extends ListActivity{
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.screen2);
+
         setListAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items));
         selection = (TextView)findViewById(R.id.selection);
 
