@@ -28,6 +28,7 @@ public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedCh
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(getApplicationContext(), BookAppActivity2.class));
+                finish();
             }
         });
     }
