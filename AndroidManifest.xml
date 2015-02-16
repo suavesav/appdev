@@ -12,8 +12,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="BookAppActivity2" android:label="bookApp1">
 
+        <activity android:name="BookAppActivity2" android:label="@string/app_name">
+        </activity>
+
+        <activity android:name=".ConnectionActivity" android:label="@string/app_name">
         </activity>
     </application>
 </manifest>

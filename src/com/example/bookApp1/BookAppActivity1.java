@@ -35,6 +35,7 @@ public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedCh
                 finish();
             }
         });
+        showAlert();
     }
 
     public void onCheckedChanged(RadioGroup group, int checkedId)
@@ -59,7 +60,7 @@ public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedCh
         }
     }
 
-    public void showAlert(View v)
+    public void showAlert()
     {
         new AlertDialog.Builder(this)
                 .setTitle("Connect")
