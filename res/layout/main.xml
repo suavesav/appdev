@@ -5,46 +5,6 @@
               android:layout_height="fill_parent"
               android:weightSum="1">
 
-
-    <RadioGroup
-            android:id="@+id/orientation"
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Horizontal"
-                android:id="@+id/grp1h" android:layout_weight="1"/>
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Vertical"
-                android:id="@+id/grp1v" android:layout_gravity="center_horizontal" android:singleLine="false"
-                android:layout_weight="1"/>
-    </RadioGroup>
-    <RadioGroup
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gravity"
-            android:orientation="vertical">
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="left"
-                android:id="@+id/grp2l"/>
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="center"
-                android:id="@+id/grp2c"/>
-        <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="right"
-                android:id="@+id/grp2r"/>
-    </RadioGroup>
-
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
