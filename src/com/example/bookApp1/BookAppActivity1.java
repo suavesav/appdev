@@ -27,8 +27,7 @@ public class BookAppActivity1 extends Activity{
             startActivity(new Intent(getApplicationContext(), BookAppActivity2.class));
             finish();
         }
-
-        if(!mBluetoothAdapter.isEnabled())
+        else if(!mBluetoothAdapter.isEnabled())
         {
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
