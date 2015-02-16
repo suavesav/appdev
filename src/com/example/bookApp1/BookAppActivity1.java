@@ -1,11 +1,15 @@
 package com.example.bookApp1;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.*;
+
+import java.text.MessageFormat;
 
 public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedChangeListener{
     RadioGroup orientation;
@@ -53,5 +57,25 @@ public class BookAppActivity1 extends Activity implements RadioGroup.OnCheckedCh
                 gravity.setGravity(Gravity.RIGHT);
                 break;
         }
+    }
+
+    public void showAlert(View v)
+    {
+        new AlertDialog.Builder(this)
+                .setTitle("Connect")
+                .setMessage("Connect to Laziest Boy via Bluetooth?")
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(getApplicationContext(), ConnectionActivity.class));
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(getApplicationContext(), BookAppActivity2.class));
+                    }
+                })
+                .show();
     }
 }
