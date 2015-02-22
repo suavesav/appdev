@@ -5,8 +5,12 @@
               android:layout_height="fill_parent"
               android:weightSum="1">
 
+    <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btDevices" android:layout_gravity="center_horizontal"/>
     <Button
-            android:layout_width="wrap_content"
+            android:layout_width="102dp"
             android:layout_height="wrap_content"
             android:text="Next"
             android:id="@+id/next" android:layout_gravity="center_horizontal"/>

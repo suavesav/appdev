@@ -3,14 +3,15 @@ package com.example.bookApp1;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.bluetooth.BluetoothAdapter;
-import android.content.DialogInterface;
-import android.content.Intent;
+import android.bluetooth.BluetoothDevice;
+import android.content.*;
 import android.os.Bundle;
 import android.view.View;
+import android.app.ListActivity;
 import android.widget.*;
 
 
-public class BookAppActivity1 extends Activity{
+public class BookAppActivity1 extends ListActivity{
     private static final int REQUEST_ENABLE_BT = 3;
     /**
      * Called when the activity is first created.
@@ -32,6 +33,8 @@ public class BookAppActivity1 extends Activity{
             Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
             startActivityForResult(enableBtIntent, REQUEST_ENABLE_BT);
         }
+        else if(mBluetoothAdapter.isEnabled())
+            showAlert();
 
         Button buttonNext = (Button) findViewById(R.id.next);
         buttonNext.setOnClickListener(new View.OnClickListener() {
@@ -41,7 +44,7 @@ public class BookAppActivity1 extends Activity{
                 finish();
             }
         });
-        showAlert();
+//        showAlert();
     }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -65,7 +68,8 @@ public class BookAppActivity1 extends Activity{
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        startActivity(new Intent(getApplicationContext(), ConnectionActivity.class));
+                        //startActivity(new Intent(getApplicationContext(), ConnectionActivity.class));
+                        discoverDevices();
                     }
                 })
                 .setNegativeButton("No", new DialogInterface.OnClickListener() {
@@ -75,5 +79,26 @@ public class BookAppActivity1 extends Activity{
                     }
                 })
                 .show();
+    }
+
+    public void discoverDevices()
+    {
+        final ArrayAdapter<String> mArrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1);
+        BluetoothAdapter mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
+        ListView lv = (ListView) findViewById(R.id.btDevices);
+        final BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+            @Override
+            public void onReceive(Context context, Intent intent) {
+                String action = intent.getAction();
+                if(BluetoothDevice.ACTION_FOUND.equals(action))
+                {
+                    BluetoothDevice device = intent.getParcelableExtra(BluetoothDevice.EXTRA_DEVICE);
+                    mArrayAdapter.add(device.getName() + "\n" + device.getAddress());
+                }
+            }
+        };
+        IntentFilter filter = new IntentFilter(BluetoothDevice.ACTION_FOUND);
+        registerReceiver(mBroadcastReceiver, filter);
+
     }
 }
