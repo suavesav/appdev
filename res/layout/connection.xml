@@ -10,11 +10,10 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Connecting to Device"
             android:id="@+id/connecting" android:layout_gravity="center_horizontal"/>
-    <ProgressBar
-            style="?android:attr/progressBarStyleLarge"
+    <ListView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progressBar" android:layout_gravity="center_horizontal"/>
+            android:id="@+id/list"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
