@@ -8,21 +8,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Looking for Devices"
+            android:text="Connecting to Device"
             android:id="@+id/connecting" android:layout_gravity="center_horizontal"/>
     <ListView
-            android:id="@+id/btList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-    <ProgressBar
-            style="?android:attr/progressBarStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/progressBar" android:layout_gravity="center_horizontal"/>
+            android:id="@+id/btList"/>
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Continue Without Connecting"
+            android:text="Continue"
             android:id="@+id/proceed" android:layout_gravity="center_horizontal"/>
     <Button
             android:layout_width="wrap_content"
